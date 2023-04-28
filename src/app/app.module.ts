@@ -4,18 +4,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { SideNavComponent } from './side-nav/side-nav.component';
+
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
-import {MatToolbarModule} from '@angular/material/toolbar'; 
-
-
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatButtonModule} from '@angular/material/button';
+import { FooterComponent } from './footer/footer.component';
+import { MainPageModule } from './main-page/main-page.module';
+import { ContactModule } from './contact/contact.module';
+import { MaterialModule } from './material.module';
 @NgModule({
   declarations: [
     AppComponent,
-    SideNavComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,7 +26,11 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatSidenavModule,
     MatListModule,
     MatIconModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatButtonModule,
+    MainPageModule,
+    ContactModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

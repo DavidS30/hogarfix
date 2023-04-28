@@ -1,0 +1,18 @@
+<div id="container">
+    <div id="bg-container">
+        <img src="assets/main_image.jpg" alt="main image">
+    </div>
+    <div id="content-container">
+        <h1>Repara tu casa</h1>
+        <p>¿Necesitas a un experto para reparar tu casa? en hogarfix puedes encontrar a la persona indicada
+            para realizar el trabajo que necesitas.
+        </p>
+        <button>Saber más</button>
+    </div>
+</div>
+<div class="card-container">
+    <app-user-card 
+    *ngFor="let user of users" 
+    [user]="user">
+    </app-user-card>
+</div>  

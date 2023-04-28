@@ -1,1 +1,28 @@
-<app-side-nav></app-side-nav>
+<div class="nav-container" [class.example-is-mobile]="mobileQuery.matches" >
+    <mat-toolbar class="nav-toolbar">
+      <button mat-icon-button (click)="snav.toggle()" class="btn-toolbar"><mat-icon>menu</mat-icon></button>
+      <div class="logo">
+        <img src="assets/logo_hogarfix.png" alt="logo" class="img_logo">
+      </div>
+    </mat-toolbar>
+    
+  
+    <mat-sidenav-container class="example-sidenav-container"
+                           [style.marginTop.px]="mobileQuery.matches ? 180 : 0">
+      <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+                   [fixedInViewport]="mobileQuery.matches" fixedTopGap="180">
+        <mat-nav-list class="nav-list">
+          <a mat-list-item [routerLink]="nav.router_link" *ngFor="let nav of fillerNav"><span class="text-nav-list">{{nav.name}}</span></a>
+        </mat-nav-list>
+      </mat-sidenav>
+  
+      <mat-sidenav-content class="side_content">
+          <router-outlet></router-outlet>
+          <app-footer></app-footer>
+      </mat-sidenav-content>
+
+    </mat-sidenav-container>
+</div>
+
+  
+  
