@@ -47,7 +47,7 @@ export class UserServiceService {
   }
 
   // create method to return user from id
-  getUserFromId(id: number): UserInterface | any {
+  getUserFromId(id: number): UserInterface | undefined {
     return this.users.find(user => user.id === id);
   }
 

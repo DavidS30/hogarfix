@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Observable, map, tap } from 'rxjs';
 import { UserInterface } from 'src/app/user-interface';
 import { UserServiceService } from 'src/app/user-service.service';
 
@@ -8,15 +9,15 @@ import { UserServiceService } from 'src/app/user-service.service';
   templateUrl: './user-details.component.html',
   styleUrls: ['./user-details.component.scss']
 })
-export class UserDetailsComponent implements OnInit{
-  user!: UserInterface;
+export class UserDetailsComponent{
+  id$: Observable<number> = this.route.paramMap.pipe(
+    map((paramMap) => Number(paramMap.get('id')))
+  );
+  user$: Observable<UserInterface | undefined> = this.id$.pipe(
+    map((id) => this.userService.getUserFromId(id)),
+    tap((user) => user === undefined && this.router.navigate(['home']))
+  );
   
-  ngOnInit() {
-    this.route.paramMap.subscribe(params => {
-      let user_id = params.get('id');
-      this.user = this.userService.getUserFromId( +user_id!);
-    });
-  }
 
-  constructor( private route: ActivatedRoute, private userService: UserServiceService) { }
+  constructor( private route: ActivatedRoute, private router: Router, private userService: UserServiceService) { }
 }
