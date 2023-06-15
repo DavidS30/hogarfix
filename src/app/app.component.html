@@ -14,6 +14,11 @@
         <mat-nav-list class="nav-list">
           <a mat-list-item [routerLink]="nav.router_link" *ngFor="let nav of fillerNav"><span class="text-nav-list">{{nav.name}}</span></a>
         </mat-nav-list>
+        <div *ngIf="login">
+          <h3>Bienvenido</h3>
+          <p>{{data_user.first_name}}</p>
+        </div>
+
       </mat-sidenav>
   
       <mat-sidenav-content class="side_content">

@@ -1,16 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UserServiceService } from '../user-service.service';
+import { HttpClient } from '@angular/common/http';
+import { AccountsService } from '../accounts.service';
 
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
   styleUrls: ['./main-page.component.scss']
 })
-export class MainPageComponent {
+export class MainPageComponent implements OnInit{
 
-  users = this.userService.getUsers();
+  public users = this.userService.getUsers();
 
-  constructor(private userService: UserServiceService) {
+  private login: boolean = false;
+
+  ngOnInit(): void {
+      // this.accountService.getAPI();
+  }
+  constructor(private userService: UserServiceService, private accountService: AccountsService) {
     
   }
 }

@@ -6,6 +6,7 @@ import { MainPageComponent } from './main-page.component';
 import {MatCardModule} from '@angular/material/card';
 import { StarRatingModule } from 'angular-star-rating';
 import { UserDetailsComponent } from './user-details/user-details.component';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [MainPageComponent, UserCardComponent, UserDetailsComponent],
@@ -13,6 +14,7 @@ import { UserDetailsComponent } from './user-details/user-details.component';
     CommonModule,
     MatCardModule,
     RouterModule,
+    MatButtonModule,
     StarRatingModule.forRoot()
   ],
   exports: [

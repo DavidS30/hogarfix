@@ -1,0 +1,51 @@
+@import '../app.component.scss';
+
+
+.container{
+    background-color: $primary;
+    width: 400px;
+    padding-top: 20px;
+    text-align: center;
+    border-radius: 10px;
+    border: solid black 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 20px auto;
+}
+
+.register_container{
+    margin-top: 40px;
+    height: 650px;
+}
+
+.login_container{
+    margin-top: 40px;
+    height: 280px;
+}
+
+.form{
+    display: block;
+}
+
+.block_components{
+    display: block;
+}
+
+button {
+    margin-top: 13px;
+}
+
+a{
+    color: black;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 12px;
+    margin-top: 10px;
+    &:hover {
+        color: rgb(160, 160, 160);
+        text-decoration: none;
+    }
+}
+

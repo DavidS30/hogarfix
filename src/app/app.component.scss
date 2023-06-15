@@ -1,3 +1,4 @@
+
 $primary: #C4FF61;
 
 .mat-sidenav{
@@ -82,4 +83,8 @@ $primary: #C4FF61;
 
 .side_content {
   background-color: white;
+}
+
+.btn_custom {
+  background-color: $primary !important;
 }
