@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UserServiceService } from '../user-service.service';
 import { HttpClient } from '@angular/common/http';
 import { AccountsService } from '../accounts.service';
+import { ProfilesService } from '../profiles.service';
 
 @Component({
   selector: 'app-main-page',
@@ -10,14 +10,18 @@ import { AccountsService } from '../accounts.service';
 })
 export class MainPageComponent implements OnInit{
 
-  public users = this.userService.getUsers();
+  users: any;
 
   private login: boolean = false;
 
   ngOnInit(): void {
-      // this.accountService.getAPI();
+      this.profileService.getAPI().subscribe(data => {
+        this.users = data;
+      }
+    );
+
   }
-  constructor(private userService: UserServiceService, private accountService: AccountsService) {
+  constructor(private accountService: AccountsService, private profileService: ProfilesService) {
     
   }
 }

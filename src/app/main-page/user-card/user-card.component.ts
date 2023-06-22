@@ -8,6 +8,6 @@ import { UserInterface } from '../../user-interface';
 })
 export class UserCardComponent {
 
-  @Input() user!: UserInterface;
+  @Input() user!: any;
 
 }

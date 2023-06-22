@@ -7,13 +7,13 @@ import { AccountsService } from '../accounts.service';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-
+  user: any = {};
   // create mtehod onInit
   ngOnInit(): void {
     let token = localStorage.getItem('token');
     if (token){
       this.accountService.getAPI(token).subscribe(data => {
-        console.log(data);
+        this.user = data;
       });
     }
   }
